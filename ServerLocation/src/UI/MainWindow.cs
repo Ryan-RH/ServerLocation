@@ -9,7 +9,7 @@ public unsafe partial class MainWindow : ConfigWindow
 {
     public MainWindow() : base() 
     {
-        Size = new(400, 350);
+        Size = new(430, 350);
         Flags = ImGuiWindowFlags.NoResize;
     }
 

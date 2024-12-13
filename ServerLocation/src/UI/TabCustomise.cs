@@ -27,7 +27,7 @@ internal static class TabCustomise
         if (PPSettings.PPDoodles.Count > 0)
         {
             ImGui.Spacing();
-            ImGui.TextColored(EColor.RedBright, "Pixel Perfect detected");
+            ImGui.TextColored(EColor.RedBright, "Pixel Perfect Config Detected");
             ImGui.Text("Click the Dot Doodle you wish to copy.");
             foreach (var doodle in PPSettings.PPDoodles)
             {

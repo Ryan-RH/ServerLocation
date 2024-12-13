@@ -41,7 +41,7 @@ internal unsafe class Canvas : Window
 
     public override void Draw()
     {
-        var drawList = ImGui.GetWindowDrawList();
+        var drawList = ImGui.GetBackgroundDrawList();
 
         if (PingTracker.Enabled && PPosition.Positions.Count > 0 && Svc.ClientState.LocalPlayer != null)
         {
