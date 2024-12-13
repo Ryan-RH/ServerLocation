@@ -6,7 +6,10 @@
         "Description": "Displays the location of player of which the player sends to the server",
         "Tags": [
             "pixelperfect",
-	    "pixel perfect"
+	        "pixel perfect",
+            "server location",
+            "server",
+            "dot"
         ],
         "InternalName": "ServerLocation",
         "AssemblyVersion": "0.0.0.1",
@@ -18,9 +21,9 @@
         "IsHide": "False",
         "IsTestingExclusive": "False",
         "DownloadCount": 1,
-        "DownloadLinkInstall": "releaseurl/latest.zip",
-        "DownloadLinkUpdate": "releaseurl/latest.zip",
-        "DownloadLinkTesting": "releaseurl/latest.zip",
+        "DownloadLinkInstall": "https://github.com/Ryan-RH/ServerLocation/releases/download/v0.0.0.1/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/Ryan-RH/ServerLocation/releases/download/v0.0.0.1/latest.zip",
+        "DownloadLinkTesting": "https://github.com/Ryan-RH/ServerLocation/releases/download/v0.0.0.1/latest.zip",
         "IconUrl": ""
     }
 
