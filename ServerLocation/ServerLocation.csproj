@@ -4,8 +4,8 @@
 
   <PropertyGroup>
     <Version>0.0.0.1</Version>
-    <Description>Mount Guide</Description>
-    <PackageProjectUrl>https://github.com/Ryan-RH/PluginTemplate</PackageProjectUrl>
+    <Description>Server Location</Description>
+    <PackageProjectUrl>https://github.com/Ryan-RH/ServerLocation</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
     <IsPackable>false</IsPackable>
   </PropertyGroup>

@@ -3,16 +3,16 @@ using ECommons.Configuration;
 using ECommons.EzIpcManager;
 using ECommons.SimpleGui;
 using ECommons.Singletons;
-using PluginName.Services;
-using PluginName.UI;
+using ServerLocation.Services;
+using ServerLocation.UI;
 
-namespace PluginName;
+namespace ServerLocation;
 
-public unsafe class PluginName : IDalamudPlugin
+public unsafe class ServerLocation : IDalamudPlugin
 {
-    internal static PluginName P;
+    internal static ServerLocation P;
     internal Configuration Config;
-    public PluginName(IDalamudPluginInterface pi)
+    public ServerLocation(IDalamudPluginInterface pi)
     {
         // Plugin Initialisation
         P = this;
@@ -25,7 +25,7 @@ public unsafe class PluginName : IDalamudPlugin
         EzConfigGui.Init(new MainWindow());
 
         // Command + IPC
-        EzCmd.Add("/pn", OnChatCommand, "Toggles plugin interface");;
+        EzCmd.Add("/sl", OnChatCommand, "Toggles plugin interface");;
         SingletonServiceManager.Initialize(typeof(ServiceManager));
     }
 

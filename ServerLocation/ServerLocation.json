@@ -1,17 +1,17 @@
 [
     {
         "Author": "AndreB",
-        "Name": "Plugin Name",
-        "Punchline": "Punchlin",
-        "Description": "Description",
+        "Name": "Server Location",
+        "Punchline": "Pixel Perfect but for what the server sees",
+        "Description": "Displays the location of player of which the player sends to the server",
         "Tags": [
-            "tag1",
-	        "tag2"
+            "pixelperfect",
+	    "pixel perfect"
         ],
-        "InternalName": "PluginName",
+        "InternalName": "ServerLocation",
         "AssemblyVersion": "0.0.0.1",
         "TestingAssemblyVersion": "0.0.0.1",
-        "RepoUrl": "https://github.com/Ryan-RH/PluginTemplate",
+        "RepoUrl": "https://github.com/Ryan-RH/ServerLocation",
         "ApplicableVersion": "any",
         "DalamudApiLevel": 11,
         "TestingDalamudApiLevel": 11,
