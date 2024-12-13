@@ -3,15 +3,26 @@ using ECommons.Configuration;
 using ECommons.EzIpcManager;
 using ECommons.SimpleGui;
 using ECommons.Singletons;
-using ServerLocation.Services;
+using ServerLocation.Framework;
+using ServerLocation.Network;
 using ServerLocation.UI;
 
 namespace ServerLocation;
 
 public unsafe class ServerLocation : IDalamudPlugin
 {
+    public string Name
+    {
+        get
+        {
+            return "ServerLocation";
+        }
+    }
+
     internal static ServerLocation P;
     internal Configuration Config;
+    private WindowSystem windowSystem;
+    private Canvas canvas;
     public ServerLocation(IDalamudPluginInterface pi)
     {
         // Plugin Initialisation
@@ -26,11 +37,23 @@ public unsafe class ServerLocation : IDalamudPlugin
 
         // Command + IPC
         EzCmd.Add("/sl", OnChatCommand, "Toggles plugin interface");;
-        SingletonServiceManager.Initialize(typeof(ServiceManager));
+
+        canvas = new();
+        windowSystem = new();
+        windowSystem.AddWindow(canvas);
+        Svc.PluginInterface.UiBuilder.Draw += windowSystem.Draw;
+
+        Svc.GameNetwork.NetworkMessage += PingTracker.PingResolver;
+        Svc.GameNetwork.NetworkMessage += PositionTracker.PositionPacketFetch;
+        Svc.Framework.Update += FrameworkManager.Framework_Update;
     }
 
     public void Dispose()
     {
+        Svc.PluginInterface.UiBuilder.Draw -= windowSystem.Draw;
+        Svc.GameNetwork.NetworkMessage -= PingTracker.PingResolver;
+        Svc.GameNetwork.NetworkMessage -= PositionTracker.PositionPacketFetch;
+        Svc.Framework.Update -= FrameworkManager.Framework_Update;
         ECommonsMain.Dispose();
         P = null;
     }
@@ -42,11 +65,6 @@ public unsafe class ServerLocation : IDalamudPlugin
         if (arguments == string.Empty)
         {
             EzConfigGui.Window.Toggle();
-        }
-        else if (arguments == "debug")
-        {
-            Config.Debug = !Config.Debug;
-            PluginLog.Information($"Debug: {Config.Debug}");
         }
     }
 }
