@@ -1,1 +1,4 @@
-Plugin Description
+- Find a way of collecting ping to server
+- Use frameupdate and framedelta to draw on the screen player's server location
+- option between predicted and actual
+- pixel customisation
