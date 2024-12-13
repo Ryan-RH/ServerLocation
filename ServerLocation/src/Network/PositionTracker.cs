@@ -12,11 +12,20 @@ public static unsafe class PositionTracker
 {
     public static void PositionPacketFetch(nint dataPtr, ushort opCode, uint sourceActorId, uint targetActorId, NetworkMessageDirection direction)
     {
-        if (direction == NetworkMessageDirection.ZoneUp && opCode == 680 && PingTracker.Enabled && P.Config.type == Configuration.Type.Real)
+        if (direction == NetworkMessageDirection.ZoneUp && PingTracker.Enabled && P.Config.type == Configuration.Type.Real)
         {
-            Vector3 coordinates = new Vector3(*(float*)(dataPtr + 2 * sizeof(float)), *(float*)(dataPtr + 3 * sizeof(float)), *(float*)(dataPtr + 4 * sizeof(float)));
-            PositionInfo position = new PositionInfo(coordinates);
-            Positions.Enqueue(position);
+            if (opCode == 680)
+            {
+                Vector3 coordinates = new Vector3(*(float*)(dataPtr + 2 * sizeof(float)), *(float*)(dataPtr + 3 * sizeof(float)), *(float*)(dataPtr + 4 * sizeof(float)));
+                PositionInfo position = new PositionInfo(coordinates);
+                Positions.Enqueue(position);
+            }
+            else if (opCode == 304)
+            {
+                Vector3 coordinates = new Vector3(*(float*)(dataPtr + 3 * sizeof(float)), *(float*)(dataPtr + 4 * sizeof(float)), *(float*)(dataPtr + 5 * sizeof(float)));
+                PositionInfo position = new PositionInfo(coordinates);
+                Positions.Enqueue(position);
+            }
         }
     }
 }
