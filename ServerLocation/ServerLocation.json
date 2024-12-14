@@ -1,29 +1,24 @@
-
-    {
-        "Author": "AndreB",
-        "Name": "Server Location",
-        "Punchline": "Pixel Perfect but for what the server sees",
-        "Description": "Displays the location of player of which the player sends to the server",
-        "Tags": [
-            "pixelperfect",
-	        "pixel perfect",
-            "server location",
-            "server",
-            "dot"
-        ],
-        "InternalName": "ServerLocation",
-        "AssemblyVersion": "0.0.0.3",
-        "TestingAssemblyVersion": "0.0.0.3",
-        "RepoUrl": "https://github.com/Ryan-RH/ServerLocation",
-        "ApplicableVersion": "any",
-        "DalamudApiLevel": 11,
-        "TestingDalamudApiLevel": 11,
-        "IsHide": "False",
-        "IsTestingExclusive": "False",
-        "DownloadCount": 1,
-        "DownloadLinkInstall": "https://github.com/Ryan-RH/ServerLocation/releases/download/v0.0.0.1/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/Ryan-RH/ServerLocation/releases/download/v0.0.0.1/latest.zip",
-        "DownloadLinkTesting": "https://github.com/Ryan-RH/ServerLocation/releases/download/v0.0.0.1/latest.zip",
-        "IconUrl": ""
-    }
-
+{
+    "Author": "AndreB",
+    "Name": "Server Location",
+    "Punchline": "Pixel Perfect but for what the server sees",
+    "Description": "Displays the location of player of which the player sends to the server",
+    "Tags": [
+        "pixelperfect",
+        "pixel perfect",
+        "server location",
+        "server",
+        "dot"
+    ],
+    "InternalName": "ServerLocation",
+    "AssemblyVersion": "0.0.0.4",
+    "TestingAssemblyVersion": "0.0.0.4",
+    "RepoUrl": "https://github.com/Ryan-RH/ServerLocation",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 11,
+    "TestingDalamudApiLevel": 11,
+    "IsHide": "False",
+    "IsTestingExclusive": "False",
+    "DownloadCount": 1,
+    "IconUrl": ""
+}

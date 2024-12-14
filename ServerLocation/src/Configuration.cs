@@ -26,4 +26,5 @@ public class Configuration : IEzConfig
     public bool PathDraw = false;
     public bool HalfPing = false;
     public bool DisplayDelay = false;
+    public int AddedDelay = 0;
 }

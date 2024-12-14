@@ -14,13 +14,13 @@ internal static class TabCustomise
     internal static void DotDraw()
     {
         //ImGui.ColorPicker4("##2", ref P.Config.DotColour);
-        ImGui.Text("Dot Colour");
+        ImGui.Text("Colour");
         ImGui.ColorEdit3("##2", ref P.Config.DotColour);
         ImGui.Spacing();
-        ImGui.Text("Dot Transparency");
+        ImGui.Text("Transparency");
         ImGui.SliderFloat("##3", ref P.Config.DotTransparency, 0.0f, 1.0f);
         ImGui.Spacing();
-        ImGui.Text("Dot Radius");
+        ImGui.Text("Radius");
         ImGui.SliderFloat("##4", ref P.Config.DotRadius, 0.1f, 10.0f);
 
         PPSettings.Locate();
@@ -39,11 +39,11 @@ internal static class TabCustomise
 
     internal static void PathDraw()
     {
-        ImGui.Text("Path Colour");
+        ImGui.Text("Colour");
         ImGui.ColorEdit3("##5", ref P.Config.PathColour);
         ImGui.Spacing();
-        ImGui.Text("Path Transparency");
-        ImGui.SliderFloat("##3", ref P.Config.PathTransparency, 0.0f, 1.0f);
+        ImGui.Text("Transparency");
+        ImGui.SliderFloat("##6", ref P.Config.PathTransparency, 0.0f, 1.0f);
     }
 
     internal static void Draw()
