@@ -32,7 +32,7 @@ internal unsafe static class TabSettings
         ImGui.TextColored(EColor.RedBright, "WORK IN PROGRESS");
         ImGui.BulletText("PixelPerfect's dot could be below ServerLocation (it shouldn't)");
         ImGui.BulletText("Actual delay and what the dot shows may not match currently");
-        ImGui.BulletText("Teleporting/instancing could it affect the pathing of the dot");
+        ImGui.BulletText("Teleporting/instancing could affect the pathing of the dot");
         ImGui.BulletText("Crashes can occur");
     }
 }
