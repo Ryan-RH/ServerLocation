@@ -12,8 +12,8 @@
             "dot"
         ],
         "InternalName": "ServerLocation",
-        "AssemblyVersion": "0.0.0.2",
-        "TestingAssemblyVersion": "0.0.0.2",
+        "AssemblyVersion": "0.0.0.3",
+        "TestingAssemblyVersion": "0.0.0.3",
         "RepoUrl": "https://github.com/Ryan-RH/ServerLocation",
         "ApplicableVersion": "any",
         "DalamudApiLevel": 11,
