@@ -3,6 +3,7 @@ using Lumina.Excel.Sheets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security;
 using System.Text;
 using System.Threading;
@@ -30,7 +31,12 @@ public static class PingTracker
         {
             TrackPacketUp(dataPtr);
         }
-        else if (ZoneUpReceived && !ZoneDownReceived && direction == NetworkMessageDirection.ZoneDown)
+        else
+        {
+            //P.Config.PacketNumber++;
+        }
+        
+        if (ZoneUpReceived && !ZoneDownReceived && direction == NetworkMessageDirection.ZoneDown)
         {
             CheckPacketDown(dataPtr);
         }
@@ -63,6 +69,8 @@ public static class PingTracker
             ZoneDownReceived = true;
             PacketTimeout?.Dispose();
             PacketTimeout = null;
+            P.Config.PacketNumber = 0;
+            P.Config.FrameNumber = 0;
         }
     }
 
@@ -73,6 +81,7 @@ public static class PingTracker
             var nextMs = nextNs / 10000;
             var delayMs = nextMs - ZoneUpTimestamp;
             PluginLog.Information($"Packet Ping: {delayMs}ms, Delay: {delayMs/2}");
+            P.Config.RawDelay = (int)delayMs;
             delay.Enqueue(delayMs);
             if (delay.Count > 10)
                 delay.Dequeue();
@@ -85,5 +94,5 @@ public static class PingTracker
 
     [SuppressUnmanagedCodeSecurity]
     [DllImport("kernel32.dll")]
-    private static extern bool QueryPerformanceCounter(out long lpPerformanceCount);
+    public static extern bool QueryPerformanceCounter(out long lpPerformanceCount);
 }

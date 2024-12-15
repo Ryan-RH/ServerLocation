@@ -1,6 +1,7 @@
 using ECommons.ChatMethods;
 using ECommons.Configuration;
 using ECommons.ImGuiMethods;
+using Lumina.Excel.Sheets;
 
 namespace ServerLocation;
 
@@ -26,5 +27,12 @@ public class Configuration : IEzConfig
     public bool PathDraw = false;
     public bool HalfPing = false;
     public bool DisplayDelay = false;
-    public int AddedDelay = 0;
+    public int AddedDelay = 120;
+
+
+    public int RawDelay = 0;
+    public int AverageDelay = 0;
+
+    public int PacketNumber = 0;
+    public int FrameNumber = 0;
 }

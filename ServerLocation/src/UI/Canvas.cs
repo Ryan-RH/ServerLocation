@@ -46,7 +46,9 @@ internal unsafe class Canvas : Window
         if (PingTracker.Enabled && PPosition.Positions.Count > 0 && Svc.ClientState.LocalPlayer != null)
         {
             // Server processing time (???)
-            var averageDelay = (int)PingTracker.delay.Average() + P.Config.AddedDelay;
+            var calculatedAverageDelay = (int)PingTracker.delay.Average();
+            P.Config.AverageDelay = calculatedAverageDelay;
+            var averageDelay = calculatedAverageDelay + P.Config.AddedDelay;
             if (P.Config.HalfPing)
                 averageDelay /= 2;
             if (P.Config.Enabled)
